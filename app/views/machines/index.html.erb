@@ -1,0 +1,17 @@
+<h1>List of machines</h1>
+<br />
+    <%@machines.each do |m|%>
+    <div class = "booyah-box col-xs-10 col-xs-offset-1">
+      <h2>Name:<%=m.name%></h2>
+      <p>Description: <%=m.description%></p>
+      <p>Location: <%=m.location%></p>
+      <p>Installation Year:<%=m.year%></p>
+      <p><%= link_to 'Edit', edit_machine_path(m), class: 'btn btn-primary btn-lg'%></p>
+    </div>
+    <%end%>
+      
+
+
+  
+      
+
