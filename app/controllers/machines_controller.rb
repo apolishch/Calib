@@ -14,7 +14,7 @@ class MachinesController < ApplicationController
   end
 
   def machine_params()
-    params.require(:machine).permit(:name, :description, :location, :year)
+    params.require(:machine).permit(:name, :description, :location, :year, :user_id)
   end
   
   def edit
@@ -29,6 +29,8 @@ class MachinesController < ApplicationController
 
   def show
     @machine = Machine.find(params[:id])
+    @service = Service.new
+    
   end
   
 

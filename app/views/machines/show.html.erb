@@ -1,7 +1,74 @@
-<h1>Detail of machine</h1> <h1>Customer<%=@machine.user.name%>
+<h1>Detail of machine</h1> <h1>Owner: <%=@machine.user.name%></h1>
+<br />
+
 <ul>Name: <%= @machine.name%></ul>
 <ul>Description: <%= @machine.description%></ul>
 <ul>Location: <%= @machine.location%></ul>
 <ul>Year of installation: <%= @machine.year%></ul>
 <ul>Created at: <%= @machine.created_at%></ul>
 <ul>Last update: <%= @machine.updated_at%></ul>
+
+<br />
+
+<button class="bt btn-primary btn-lg pull-left" data-toggle="modal" data-target="#myModal">
+  Add a service
+</button> 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a service</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @service, url: machine_services_path(@machine) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :place %>
+        <%= f.input :date %>
+        <%= f.input :supplier %>
+        <%= f.input :order %>
+      
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%=f.submit "Add a service", class: 'btn btn-primary' %>
+
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<h1>List of services</h1>
+
+<br />
+<%@machine.services.each do |service|%>
+  <div class ="col-xs-12 col-xs-1-offset">
+  <ul>Service Nr: <%= service.id%></ul>
+  <ul>Description: <%= service.description%></ul>
+  <ul>Place of works: <%= service.place%></ul>
+  <ul>Customer Order: <%= service.order%></ul>
+  <ul>Date of Works: <%= service.date%></ul>
+  <ul>Supplier: <%= service.supplier%></ul>
+  <ul>Status: <%= service.status%></ul>
+  </div>
+
+  <br />
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
