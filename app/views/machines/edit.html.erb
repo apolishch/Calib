@@ -5,9 +5,10 @@
     <%=f.input :description%>
     <%=f.input :location%>
     <%=f.input :year%>
-    <%=f.input :user_id%>
+    <%=f.association :user, collection: User.where(side_id: 1), prompt: "Choose a customer"%>
     <br />
     <%=f.submit 'Edit', class: 'btn btn-primary'%>
   <%end%>
   <br />
 </div>
+

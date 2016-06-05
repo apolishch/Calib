@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def user_params()
-     params.require(:user).permit(:name, :side)
+     params.require(:user).permit(:name, :side_id)
   end
 
  end

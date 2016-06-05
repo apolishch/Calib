@@ -1,7 +1,7 @@
 class MachinesController < ApplicationController
   
   def index
-    @machines = Machine.all
+    @machines = Machine.search(params[:search])
   end
 
   def new
