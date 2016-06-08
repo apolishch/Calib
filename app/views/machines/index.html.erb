@@ -6,8 +6,8 @@
       <p>Description: <%=m.description%></p>
       <p>Location: <%=m.location%></p>
       <p>Installation Year:<%=m.year%></p>
-      <p><%= link_to 'Edit', edit_machine_path(m), class: 'btn btn-primary btn-lg'%></p>
-      <p><%= link_to 'View details', machine_path(m), class: 'btn btn-primary btn-lg'%></p>
+      <div class="row"><%= link_to 'Edit', edit_machine_path(m), class: 'btn btn-primary btn-lg'%>
+      <%= link_to 'View details', machine_path(m), class: 'btn btn-primary btn-lg'%></div>
     </div>
     <%end%>
     

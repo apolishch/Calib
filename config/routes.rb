@@ -1,5 +1,6 @@
 Calib::Application.routes.draw do
 
+  devise_for :users
   root 'machines#index'
 
   resources :machines do
