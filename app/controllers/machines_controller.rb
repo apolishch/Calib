@@ -14,7 +14,7 @@ class MachinesController < ApplicationController
   end
 
   def machine_params()
-    params.require(:machine).permit(:name, :description, :location, :year, :user_id)
+    params.require(:machine).permit(:name, :description, :location, :year, :customer_id)
   end
   
   def edit
