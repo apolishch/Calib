@@ -58,3 +58,5 @@ end
 gem "awesome_print", require:"ap"
 
 gem 'devise'
+
+gem 'activeadmin', github: 'activeadmin'

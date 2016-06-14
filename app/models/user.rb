@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   has_many :machines
   belongs_to :side
   belongs_to :customer
+
+  def is_admin?
+  self.admin?
+  return true
+  end
+
 end
