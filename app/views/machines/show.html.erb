@@ -1,4 +1,5 @@
-<h1>Detail of machine</h1> <h1>Owner: <%#=@machine.user.name%></h1>
+<h1>Detail of machine</h1> <h1>Owner: 
+<%=@machine.customer.name%></h1>
 <br />
 
 <ul>Name: <%= @machine.name%></ul>
@@ -44,14 +45,14 @@
 
 <br />
 <%@machine.services.each do |service|%>
-  <div class ="col-xs-12 col-xs-1-offset">
-  <ul>Service Nr: <%= service.id%></ul>
-  <ul>Description: <%= service.description%></ul>
-  <ul>Place of works: <%= service.place%></ul>
-  <ul>Customer Order: <%= service.order%></ul>
-  <ul>Date of Works: <%= service.date%></ul>
-  <ul>Supplier: <%= service.supplier%></ul>
-  <ul>Status: <%= service.status%></ul>
+  <div class ="booyah-box col-xs-12 col-sm-8 col-xs-1-offset">
+  <ul><b>Service Nr:</b> <%= service.id%></ul>
+  <ul><b>Description:</b> <%= service.description%></ul>
+  <ul><b>Place of works:</b> <%= service.place%></ul>
+  <ul><b>Customer Order:</b> <%= service.order%></ul>
+  <ul><b>Date of Works:</b> <%= service.date%></ul>
+  <ul><b>Supplier:</b> <%= service.supplier%></ul>
+  <ul><b>Status:</b> <%= service.status%></ul>
   </div>
 
   <br />

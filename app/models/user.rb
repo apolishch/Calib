@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
   return true
   end
 
+  def company_name
+    if side_id == 1
+      return customer.name
+    else
+      return "Supplier"
+    end
+  end
+
 end

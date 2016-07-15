@@ -1,4 +1,5 @@
 class MachinesController < ApplicationController
+  respond_to :html, :js
   
   def index
     @machines = Machine.search(params[:search])
