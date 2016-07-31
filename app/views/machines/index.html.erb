@@ -1,9 +1,35 @@
 <h1>List of machines</h1>
 
-<%= link_to 'New Machine', new_machine_path, id: "new_link", remote: true %>
+
+<div id="newMachineForm" class="booyah-box col-xs-6 col-xs-offset-1">
+ <h1>Input Your Machine Details</h1>
+ <div class='row'>
+ <label class = 'col-md-3'>Name:</label>
+ <input class = 'col-md-9 name'></input>
+ </div>
+ <div class='row'>
+ <label class = 'col-md-3'>Description:</label>
+ <input class = 'col-md-9 description'></input>
+ </div>
+ <div class = 'row'>
+ <label class = 'col-md-3'>Location:</label>
+ <input class = 'col-md-9 location'></input>
+ </div>
+ <div class = 'row'>
+  <label class = 'col-md-3'>Year:</label>
+ <input class = 'col-md-9 year'></input>
+ </div>
+    <br />
+ <div class='btn btn-primary' onClick='createNewMachine()'>Create</div>
+  <br />
+</div>
+
+
+<a href='#' id='showNewMachineFormLink' onClick="newMachineFormVisibility()">New Machine</a>
 <%#<div id="machine-form" style="display:none;"></div>%>
 
 <br />
+  <div class='machines-list'>
     <%@machines.each do |m|%>
     <div class = "booyah-box col-xs-10 col-xs-offset-1">
       <h2 class="machine-name">Name:<%=m.name%></h2>
@@ -13,6 +39,7 @@
       <%= link_to 'View details', machine_path(m), class: 'btn btn-primary btn-sm'%></div>
     </div>
     <%end%>
+  </div>
     
     
 

@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
+gem 'pry'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'web-console'
 
 # Use SCSS for stylesheets
 

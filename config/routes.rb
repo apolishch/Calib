@@ -8,6 +8,8 @@ Calib::Application.routes.draw do
     resources :services, only: :create
   end
 
+  post '/machines/create' => 'machines#create'
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.

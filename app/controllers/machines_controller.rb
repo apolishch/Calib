@@ -10,8 +10,15 @@ class MachinesController < ApplicationController
   end
 
   def create
-    Machine.create(machine_params)
-    redirect_to root_path
+    machine = Machine.create(machine_params)
+    respond_to do |format|
+      format.html {
+        redirect_to root_path
+      }
+      format.js {
+        render json: machine.as_json
+      }
+    end
   end
 
   def machine_params()
